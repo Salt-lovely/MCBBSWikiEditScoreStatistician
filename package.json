@@ -1,0 +1,26 @@
+{
+  "name": "mcbbswiki-edit-score-statistician",
+  "version": "0.1.0",
+  "description": "MCBBS Wiki 积分统计工具",
+  "main": "src/app.ts",
+  "scripts": {
+    "devbuild": "esbuild ./src/app.ts --bundle --charset=utf8 --target=es2015 --platform=browser --outfile=dist/app.js",
+    "minbuild": "esbuild ./src/app.ts --bundle --charset=utf8 --target=es2015 --platform=browser --legal-comments=eof --minify --outfile=dist/app.min.js",
+    "build": "npm run devbuild & npm run minbuild",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Salt-lovely/MCBBSWikiEditScoreStatistician.git"
+  },
+  "keywords": [
+    "MCBBSWiki",
+    "typescript"
+  ],
+  "author": "Salt-lovely",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/Salt-lovely/MCBBSWikiEditScoreStatistician/issues"
+  },
+  "homepage": "https://github.com/Salt-lovely/MCBBSWikiEditScoreStatistician#readme"
+}
