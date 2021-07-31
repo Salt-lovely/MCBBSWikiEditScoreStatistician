@@ -29,17 +29,24 @@ export function setData(datas: QueriedData[]) {
       ns: data.query.pages[k].ns,
       uid: revision.userid,
     };
-    // 记录 uid 与用户间的映射关系
+    // 记录 uid 与用户名间的映射关系
     if (!userIdMap[revision.userid]) userIdMap[revision.userid] = revision.user;
     if (!idUserMap[revision.user]) idUserMap[revision.user] = revision.userid;
   }
 }
 
-/** 获取某个uid下的所有编辑记录 */
+/** 获取某个 uid 下的所有编辑记录 */
 export function getDataByUid(uid: number): CachedDatas {
   const res: CachedDatas = [];
   for (let data of CachedDatas) {
     if (data.uid === uid) res.push(Object.assign({}, data));
   }
   return res;
+}
+
+/** 获取某个用户的所有编辑记录 */
+export function getDataByUname(uname: string): CachedDatas {
+  const uid = getUserId(uname);
+  if (!uid) return [];
+  return getDataByUid(uid);
 }
