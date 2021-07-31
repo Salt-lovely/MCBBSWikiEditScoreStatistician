@@ -15,6 +15,7 @@ const badData: BadQueriedData = {
 /**
  * 根据 rid 获取编辑信息
  * @param rid 编辑的 rid
+ * @param timeout 超时时间
  * @returns 获取到的数据
  */
 export async function fetchRid(rid: number, timeout = 15000): Promise<QueriedData> {
@@ -25,7 +26,8 @@ export async function fetchRid(rid: number, timeout = 15000): Promise<QueriedDat
 
 /**
  * 批量查询
- * @param rids rid列表
+ * @param rids rid 列表
+ * @param timeout 单次访问超时时间
  * @returns 查询到的数据
  */
 export async function fetchRids(rids: number[], timeout = 15000): Promise<QueriedData[]> {
@@ -38,7 +40,8 @@ export async function fetchRids(rids: number[], timeout = 15000): Promise<Querie
 
 /**
  * 多进程查询
- * @param rids rid列表
+ * @param rids rid 列表
+ * @param timeout 单次访问超时时间
  * @param threads 进程数
  * @returns 查询到的数据
  */
